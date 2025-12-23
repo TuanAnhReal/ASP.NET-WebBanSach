@@ -1,0 +1,63 @@
+/* Tùy chỉnh khung chứa sản phẩm */
+.product-item {
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Ảnh sản phẩm */
+.product-image {
+    max-width: 100%;
+    height: 180px; /* Độ cao cố định để các thẻ đều nhau */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Tên sách */
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #007bff;
+    height: 40px; /* Giới hạn 2 dòng chữ */
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Phần giá và nút chi tiết ở chân thẻ */
+.product-footer {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 13px;
+    color: #333;
+}
+
+.btn-detail {
+    background-color: #5cb85c; /* Màu xanh lá của nút Chi tiết */
+    color: white;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.btn-detail:hover {
+    background-color: #4cae4c;
+    color: white;
+}

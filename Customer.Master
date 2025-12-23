@@ -4,49 +4,100 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>BookStore Online</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/bootstrap.bundle.min.js"></script>
-    <script src="Scripts/bootstrap.bundle.js"></script>
+    <style>
+        .navbar-dark.bg-dark-custom {
+            background-color: #212529;
+        }
+
+        .cart-count {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,.75) !important;
+        }
+
+            .nav-link:hover {
+                color: #fff !important;
+            }
+    </style>
 </head>
+
 <body>
     <form id="form1" runat="server">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="Default.aspx">BookStore Online</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" href="Default.aspx">TRANG CHỦ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
+                        <%--danh mục sách--%>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown link
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                                role="button" data-bs-toggle="dropdown">DANH MỤC SÁCH</a>
+
+                            <ul class="dropdown-menu">
+                                <asp:Repeater runat="server" id="rpDanhMuc" DataSourceID="dsDanhMuc">
+                                    <ItemTemplate>
+                                        <li>
+                                            <a class="dropdown-item" href="Product.aspx?macd=<%# Eval("MaCD") %>">
+                                                <%# Eval("Tenchude") %>
+                                            </a>
+
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </ul>
                         </li>
                     </ul>
+
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Login.aspx">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="GioHang.aspx">
+                                    <i class="bi bi-cart"></i>Giỏ hàng 
+                                   
+                                    <span class="badge bg-warning text-dark rounded-pill">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
 
-        <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+        <main class="container my-4 w-90 ">
+            <asp:ContentPlaceHolder ID="Content" runat="server" >
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="py-4 bg-dark border-top mt-5">
+            <div class="container text-center">
+                <p class="text-muted mb-0">&copy; 2025 - Xây dựng ứng dụng Web Bán Sách</p>
+            </div>
+        </footer>
+
+        <asp:SqlDataSource ID="dsDanhMuc" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreDBConnStr %>" ProviderName="<%$ ConnectionStrings:BookStoreDBConnStr.ProviderName %>" SelectCommand="SELECT * FROM [ChuDe]"></asp:SqlDataSource>
+
     </form>
 </body>
 </html>

@@ -67,6 +67,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bia_sach\101Cakhuc.jpg" />
+    <Content Include="Bia_sach\aloVietnam.jpg" />
+    <Content Include="Bia_sach\caosuvietnam.jpg" />
+    <Content Include="Bia_sach\Cautrucmaytinh.jpg" />
+    <Content Include="Bia_sach\con-toi-di-hoc.jpg" />
+    <Content Include="Bia_sach\Danongcungkhoc.gif" />
+    <Content Include="Bia_sach\Gt_Thcb.jpg" />
+    <Content Include="Bia_sach\Hatnuadiem.jpg" />
+    <Content Include="Bia_sach\Huyenthoaime.jpg" />
+    <Content Include="Bia_sach\khi-con-gian-doi.jpg" />
+    <Content Include="Bia_sach\Kientrucmaytinh.jpg" />
+    <Content Include="Bia_sach\KT0001.jpg" />
+    <Content Include="Bia_sach\KT0002.jpg" />
+    <Content Include="Bia_sach\KT0003.jpg" />
+    <Content Include="Bia_sach\KT0004.jpg" />
+    <Content Include="Bia_sach\KT0005.jpg" />
+    <Content Include="Bia_sach\KT0006.jpg" />
+    <Content Include="Bia_sach\KT0007.jpg" />
+    <Content Include="Bia_sach\KT0008.jpg" />
+    <Content Include="Bia_sach\KT0009.jpg" />
+    <Content Include="Bia_sach\Marketingdulich.jpg" />
+    <Content Include="Bia_sach\Nghiepvuletan.jpg" />
+    <Content Include="Bia_sach\Nhudadauyeu.jpg" />
+    <Content Include="Bia_sach\Noidoi-noinhieu.jpg" />
+    <Content Include="Bia_sach\P0001.jpg" />
+    <Content Include="Bia_sach\Phamduy.jpg" />
+    <Content Include="Bia_sach\Phunumanhme.jpg" />
+    <Content Include="Bia_sach\P_0001.jpg" />
+    <Content Include="Bia_sach\TH001.jpg" />
+    <Content Include="Bia_sach\TH002.jpg" />
+    <Content Include="Bia_sach\TH003.jpg" />
+    <Content Include="Bia_sach\TH004.jpg" />
+    <Content Include="Bia_sach\TH005.jpg" />
+    <Content Include="Bia_sach\TH006.jpg" />
+    <Content Include="Bia_sach\TH007.jpg" />
+    <Content Include="Bia_sach\TH008.jpg" />
+    <Content Include="Bia_sach\Vanhoatrungquoc.jpg" />
+    <Content Include="Bia_sach\xuatan.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -85,6 +123,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="My-Style\sanpham.css" />
+    <Content Include="Product.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -111,6 +151,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +178,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Bia_sach\Thumbs.db" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
