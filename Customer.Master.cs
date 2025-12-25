@@ -12,7 +12,7 @@ namespace WebBanSach
     {
         public int MaSach { get; set; }
         public string TenSach { get; set; }
-        public string AnhBia { get; set; } = string.Empty;
+        public string AnhBia { get; set; }
         public double DonGia { get; set; }
         public int SoLuong { get; set; }
         public double ThanhTien => DonGia * SoLuong;

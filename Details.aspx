@@ -48,7 +48,7 @@
                                 <i class="bi bi-arrow-left"></i>Quay lại
                             </a>
                             <button type="button" class="btn btn-success px-4 fw-bold"
-                                onclick='ajaxAddToCart(<%# Eval("MaSach") %>, "<%# Eval("TenSach") %>", <%# Eval("Dongia") %>), <%# Eval("AnhBia") %>'>
+                                onclick='ajaxAddToCart(<%# Eval("MaSach") %>, "<%# Eval("TenSach") %>", <%# Eval("Dongia") %>, "<%# Eval("AnhBia") %>")'>
                                 <i class="bi bi-cart-plus"></i>THÊM VÀO GIỎ
                             </button>
                         </div>
@@ -88,7 +88,7 @@
                                 </p>
                             </div>
                         </a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                 </div>
             </ItemTemplate>
