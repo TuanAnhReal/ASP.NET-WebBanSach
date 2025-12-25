@@ -48,18 +48,26 @@
                         </li>
                         <%--danh mục sách--%>
                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">DANH MỤC SÁCH
+                            </a>
 
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                                role="button" data-bs-toggle="dropdown">DANH MỤC SÁCH</a>
-
-                            <ul class="dropdown-menu">
-                                <asp:Repeater runat="server" id="rpDanhMuc" DataSourceID="dsDanhMuc">
+                            <ul class="dropdown-menu shadow border-0" aria-labelledby="navbarDropdown">
+                                <asp:Repeater runat="server" ID="rpDanhMuc" DataSourceID="dsDanhMuc">
                                     <ItemTemplate>
                                         <li>
-                                            <a class="dropdown-item" href="Product.aspx?macd=<%# Eval("MaCD") %>">
-                                                <%# Eval("Tenchude") %>
+                                            <a class="dropdown-item d-flex justify-content-between align-items-center border-bottom py-2"
+                                                href="Product.aspx?MaCD=<%# Eval("MaCD") %>">
+                                                <div class="text-secondary">
+                                                    <%-- Mũi tên đầu dòng dùng ký tự hoặc icon --%>
+                                                    <span class="me-2">&rsaquo;</span>
+                                                    <%# Eval("Tenchude") %>
+                                                </div>
+                                                <%-- Số lượng sách trong hạt tròn (Badge) --%>
+                                                <span class="badge rounded-pill bg-dark small">
+                                                    <%# Eval("TongSoSach") %>
+                                                </span>
                                             </a>
-
                                         </li>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -86,7 +94,7 @@
         </nav>
 
         <main class="container my-4 w-90 ">
-            <asp:ContentPlaceHolder ID="Content" runat="server" >
+            <asp:ContentPlaceHolder ID="Content" runat="server">
             </asp:ContentPlaceHolder>
         </main>
 
@@ -96,7 +104,19 @@
             </div>
         </footer>
 
-        <asp:SqlDataSource ID="dsDanhMuc" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreDBConnStr %>" ProviderName="<%$ ConnectionStrings:BookStoreDBConnStr.ProviderName %>" SelectCommand="SELECT * FROM [ChuDe]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="dsDanhMuc" runat="server"
+            ConnectionString="<%$ ConnectionStrings:BookStoreDBConnStr %>"
+            ProviderName="<%$ ConnectionStrings:BookStoreDBConnStr.ProviderName %>"
+            SelectCommand="SELECT ChuDe.MaCD, chude.Tenchude, count(sach.masach) as TongSoSach 
+            FROM ChuDe inner join sach on sach.macd = chude.macd
+            group by ChuDe.MaCD, chude.Tenchude"></asp:SqlDataSource>
+
+        <br />
+        <asp:SqlDataSource ID="dsTenChuDe" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreDBConnStr %>" SelectCommand="SELECT [Tenchude] FROM [ChuDe] WHERE ([MaCD] = @MaCD)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="MaCD" QueryStringField="MaCD" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 
     </form>
 </body>

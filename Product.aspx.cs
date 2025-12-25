@@ -11,7 +11,14 @@ namespace WebBanSach
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                //nếu không có mã chủ đề thì chuyển về trang default
+                if (string.IsNullOrEmpty(Request.QueryString["MaCD"]))
+                {
+                    Response.Redirect("Default.aspx");
+                }
+            }
         }
     }
 }
