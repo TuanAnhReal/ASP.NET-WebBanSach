@@ -44,7 +44,7 @@
                                     Giá bán: <span class="fw-bold" style="color: red"><%# Eval("Dongia", "{0:#,##0}") %> đồng</span>
                                 </div>
                                 <asp:HyperLink ID="lnkDetail" runat="server"
-                                    NavigateUrl='<%# "ChiTietSach.aspx?ms=" + Eval("MaSach") %>'
+                                    NavigateUrl='<%# "Details.aspx?MaSach=" + Eval("MaSach") %>'
                                     CssClass="btn btn-success btn-sm px-3"
                                     Style="background-color: #5cb85c; border: none; font-size: 0.8rem;">
                                 Chi tiết
