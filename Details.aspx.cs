@@ -10,7 +10,6 @@ namespace WebBanSach
 {
     public partial class Details : System.Web.UI.Page
     {
-
         [WebMethod(EnableSession = true)] // Bắt buộc EnableSession = true để truy cập Session
         public static string AddToCard(int maSach, string tenSach, double donGia, string anhBia)
         {
