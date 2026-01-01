@@ -45,12 +45,16 @@
 
                         <div class="mt-4 d-flex gap-2">
                             <a href="Default.aspx" class="btn btn-outline-secondary px-4">
-                                <i class="bi bi-arrow-left"></i>Quay lại
+                                <i class="fa-solid fa-backward"></i>Quay lại
                             </a>
-                            <button type="button" class="btn btn-success px-4 fw-bold"
-                                onclick='ajaxAddToCart(<%# Eval("MaSach") %>, "<%# Eval("TenSach") %>", <%# Eval("Dongia") %>, "<%# Eval("AnhBia") %>")'>
-                                <i class="bi bi-cart-plus"></i>THÊM VÀO GIỎ
-                            </button>
+
+                            <asp:LinkButton ID="btnAddToCart" runat="server"
+                                CssClass="btn btn-success px-4 fw-bold"
+                                OnClick="btnAddToCart_Click"
+                                CommandArgument='<%# Eval("MaSach") %>'>
+                            <i class="fa-solid fa-bag-shopping"></i> THÊM VÀO GIỎ
+                            </asp:LinkButton>
+
                         </div>
                     </div>
                 </div>
@@ -94,29 +98,6 @@
             </ItemTemplate>
         </asp:Repeater>
     </div>
-
-    <script type="text/javascript">
-        function ajaxAddToCart(id, name, price, img) {
-            $.ajax({
-                type: "POST",
-                url: "Details.aspx/AddToCard",
-                data: JSON.stringify({ maSach: id, tenSach: name, donGia: price, anhBia: img }),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (response) {
-                    if (response.d !== "error") {
-                        alert("Đã thêm '" + name + "' vào giỏ hàng thành công!");
-                        $('#cart-count').text(response.d);
-                    } else {
-                        alert("Không thể thêm vào giỏ hàng. Vui lòng thử lại!");
-                    }
-                },
-                error: function () {
-                    alert("Lỗi kết nối máy chủ!");
-                }
-            });
-        }
-    </script>
 
     <asp:SqlDataSource ID="dsChiTietSach" runat="server"
         ConnectionString="<%$ ConnectionStrings:BookStoreDBConnStr %>"

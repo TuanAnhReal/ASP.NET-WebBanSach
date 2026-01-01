@@ -11,7 +11,7 @@
 
                     <div class="col-12">
                         <div class="p-2 mb-4 bg-success bg-opacity-10 border-start border-success border-4 d-flex align-items-center">
-                            <i class="icon icon-book me-2 text-success" style="font-size: 1.5rem;"></i>
+                            <i class="fa-solid fa-book me-2 text-success" style="font-size: 1.5rem;"></i>
                             <h4 class="mb-0 text-success fw-bold text-uppercase"><%# Eval("Tenchude") %></h4>
                         </div>
                     </div>
@@ -19,9 +19,9 @@
             </ItemTemplate>
         </asp:Repeater>
 
-
+        <%--các thẻ sách theo chủ đề--%>
         <div class="row">
-            <asp:Repeater runat="server" ID="rptSach" DataSourceID="dsSachTheoCD">
+            <asp:Repeater runat="server" ID="rptSachTheoCD">
                 <ItemTemplate>
 
                     <div class="col-md-4 col-sm-6 mb-4">
@@ -56,13 +56,17 @@
             </asp:Repeater>
         </div>
 
+        <%--phân trang--%>
+        <div class="row mt-4">
+            <div class="col-12 d-flex justify-content-center">
+                <nav>
+                    <ul class="pagination">
+                        <asp:Literal ID="ltrPhanTrang" runat="server"></asp:Literal>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
 
 
-    <asp:SqlDataSource ID="dsSachTheoCD" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreDBConnStr %>" SelectCommand="SELECT * FROM [Sach] WHERE ([MaCD] = @MaCD)">
-        <SelectParameters>
-            <asp:QueryStringParameter DefaultValue="5" Name="MaCD" QueryStringField="MaCD" Type="Int32" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-
-</asp:Content>
+    </asp:Content>

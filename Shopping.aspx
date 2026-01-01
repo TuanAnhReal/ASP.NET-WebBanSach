@@ -1,12 +1,15 @@
 ﻿<%@ Page Title="Giỏ hàng" Language="C#" MasterPageFile="~/Customer.Master" AutoEventWireup="true" CodeBehind="Shopping.aspx.cs" Inherits="WebBanSach.Shopping" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
     <div class="container mt-5">
         <div class="row mb-4">
             <div class="col-12">
-                <div class="p-2 bg-success bg-opacity-10 border-start border-success border-4">
+
+                <div class="p-2 mb-4 bg-success bg-opacity-10 border-start border-success border-4 d-flex align-items-center">
+                    <i class="fa-solid fa-bag-shopping text-success fs-4 me-2"></i>
                     <h4 class="mb-0 text-success fw-bold text-uppercase">Thông tin hàng hóa trong giỏ hàng</h4>
                 </div>
             </div>

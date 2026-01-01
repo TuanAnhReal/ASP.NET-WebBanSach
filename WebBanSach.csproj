@@ -124,6 +124,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="JS\Shopping_JS.js" />
     <Content Include="My-Style\sanpham.css" />
     <Content Include="Product.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <Compile Include="Customer.Master.cs">
       <DependentUpon>Customer.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Customer.Master.designer.cs">
       <DependentUpon>Customer.Master</DependentUpon>
@@ -159,6 +161,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Sach.cs" />
+    <Compile Include="Models\SachDAO.cs" />
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

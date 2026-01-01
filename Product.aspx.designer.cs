@@ -24,21 +24,21 @@ namespace WebBanSach
         protected global::System.Web.UI.WebControls.Repeater rptChuDe;
 
         /// <summary>
-        /// rptSach control.
+        /// rptSachTheoCD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSach;
+        protected global::System.Web.UI.WebControls.Repeater rptSachTheoCD;
 
         /// <summary>
-        /// dsSachTheoCD control.
+        /// ltrPhanTrang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsSachTheoCD;
+        protected global::System.Web.UI.WebControls.Literal ltrPhanTrang;
     }
 }

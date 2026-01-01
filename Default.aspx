@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="p-2 mb-4 bg-success bg-opacity-10 border-start border-success border-4 d-flex align-items-center">
-                    <i class="icon icon-book text-success fs-4 me-2"></i>
+                    <i class="fa-solid fa-book text-success fs-4 me-2"></i>
                     <h4 class="mb-0 text-success fw-bold text-uppercase">SÁCH MỚI</h4>
                 </div>
             </div>
