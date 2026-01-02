@@ -47,7 +47,8 @@
                             <a href="Default.aspx" class="btn btn-outline-secondary px-4">
                                 <i class="fa-solid fa-backward"></i>Quay lại
                             </a>
-
+                            <%--<asp:Button ID="btnAddToCart" OnClick="btnAddToCart_Click" 
+                                CommandArgument='<%# Eval("MaSach") %>' runat="server" Text="THÊM VÀO GIỎ" />--%>
                             <asp:LinkButton ID="btnAddToCart" runat="server"
                                 CssClass="btn btn-success px-4 fw-bold"
                                 OnClick="btnAddToCart_Click"
